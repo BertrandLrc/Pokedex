@@ -1,4 +1,4 @@
-import PokemonCard from "./components/Salameche";
+import PokemonCard from "./components/PokemonCard.jsx";
 
 function App() {
   return (
