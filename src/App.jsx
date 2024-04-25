@@ -1,27 +1,21 @@
+import Button from "./components/NavBar.jsx";
 import PokemonCard from "./components/PokemonCard.jsx";
 import { useState } from "react";
 
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const handleClick1 = () => {
-    setPokemonIndex(pokemonIndex +1)
-  };
-  const handleClick2 = () => {
-    setPokemonIndex(pokemonIndex -1)
-  };
-
 
   return (
       <>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-      {(pokemonIndex > 0) ? (<button onClick={handleClick2}>Précédent</button>) : "" }
-      {(pokemonIndex < pokemonList.length -1) ? (<button onClick={handleClick1}>Suivant</button>) : ""}
+      <Button
+          pokemonIndex={pokemonIndex}
+          setPokemonIndex={setPokemonIndex}
+          pokemonLength={pokemonList.length -1} />
       </>
   );
 }
-
-
 
 export default App;
 
