@@ -5,15 +5,20 @@ import { useState } from "react";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
+  const handleClick = (index) => {
+    setPokemonIndex(index);
+  };
 
   return (
-      <>
+    <>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
       <Button
           pokemonIndex={pokemonIndex}
+          pokemonList={pokemonList}
           setPokemonIndex={setPokemonIndex}
-          pokemonLength={pokemonList.length -1} />
-      </>
+          click={handleClick}
+       />
+    </>
   );
 }
 
@@ -44,3 +49,4 @@ const pokemonList = [
     name: "mew",
   },
 ];
+
